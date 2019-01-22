@@ -1,0 +1,3 @@
+services:
+    Rector\Rector\Architecture\Factory\NewObjectToFactoryCreateRector:
+        Rector\Tests\Rector\Architecture\Factory\NewObjectToFactoryCreateRector\Source\MyClass: ['Rector\Tests\Rector\Architecture\Factory\NewObjectToFactoryCreateRector\Source\MyClassFactory', 'create']
