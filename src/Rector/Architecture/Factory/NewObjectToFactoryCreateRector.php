@@ -10,7 +10,6 @@ use Rector\RectorDefinition\RectorDefinition;
 
 final class NewObjectToFactoryCreateRector extends AbstractRector
 {
-
 	/**
 	 * @return string[]
 	 */
