@@ -10,6 +10,11 @@ use Rector\RectorDefinition\RectorDefinition;
 
 final class NewObjectToFactoryCreateRector extends AbstractRector
 {
+    public function __construct(string $objectClass, string $factoryClass, string $factoryMethod)
+    {
+    }
+
+
 	/**
 	 * @return string[]
 	 */
