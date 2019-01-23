@@ -10,10 +10,18 @@ use Rector\RectorDefinition\RectorDefinition;
 
 final class NewObjectToFactoryCreateRector extends AbstractRector
 {
-    public function __construct(string $objectClass, string $factoryClass, string $factoryMethod)
-    {
-    }
+    /**
+     * @var string[][]
+     */
+    private $objectToFactoryMethod;
 
+    /**
+     * @param string[][] $objectToFactoryMethod
+     */
+    public function __construct(array $objectToFactoryMethod)
+    {
+        $this->objectToFactoryMethod = $objectToFactoryMethod;
+    }
 
 	/**
 	 * @return string[]
@@ -26,6 +34,16 @@ final class NewObjectToFactoryCreateRector extends AbstractRector
 
 	public function refactor(Node $node): ?Node
 	{
+        foreach ($this->objectToFactoryMethod as $type => $factoryMethod) {
+            if (! $this->isType($node, $type)) {
+                continue;
+            }
+
+            // we got a match!
+            dump($node);
+            die;
+        }
+
 		return $node;
 	}
 
